@@ -15,6 +15,6 @@ class SendTextController < ApplicationController
 			to:   recipient,
 			body: message.body
 		)
-		redirect_to messages_path
+		redirect_to messages_path,
 	end
 end
