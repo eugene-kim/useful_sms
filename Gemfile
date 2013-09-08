@@ -6,8 +6,8 @@ gem 'twilio-ruby'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
+gem 'taps'
+gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,16 +23,15 @@ group :assets do
                               :github => 'anjlab/bootstrap-rails'
 end
 
-group :development do
-	gem 'better_errors'
+group :development, :test do
+  gem 'better_errors'
 end
 
 gem 'binding_of_caller'
 
 gem 'jquery-rails'
 
-group :production do
-	gem 'pg'
+group :production, :staging do
 	gem 'rails_12factor'
 end
 
