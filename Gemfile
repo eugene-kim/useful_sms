@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.7'
+gem 'twilio-ruby'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -19,6 +20,12 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
+
+group :development do
+	gem 'better_errors'
+end
+
+gem 'binding_of_caller'
 
 gem 'jquery-rails'
 

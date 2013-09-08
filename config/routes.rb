@@ -1,8 +1,8 @@
 UsefulSms::Application.routes.draw do
-
-
   resources :messages
   root to: 'messages#index'
+  match 'send_sms' => 'send_text#send_sms', :as => 'send_sms'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
