@@ -16,3 +16,6 @@
 
 #Ignore user specific twilio information
 /config/twilio.yml
+
+# Ignore application configuration
+/config/application.yml

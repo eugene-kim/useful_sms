@@ -4,10 +4,15 @@ class SendTextController < ApplicationController
 		keyword = params['keyword']
 		message = Message.find_by_keyword(keyword)
 
-		sid               = TWILIO_CONFIG['sid']
-		token             = TWILIO_CONFIG['token']
-		recipient         = TWILIO_CONFIG['target_number']
-		twilio_number     = TWILIO_CONFIG['from']
+		# sid               = TWILIO_CONFIG['sid']
+		# token             = TWILIO_CONFIG['token']
+		# recipient         = TWILIO_CONFIG['target_number']
+		# twilio_number     = TWILIO_CONFIG['from']
+
+		sid               = ENV['SID']
+		token             = ENV['TOKEN']
+		recipient         = ENV['TARGET_NUMBER']
+		twilio_number     = ENV['FROM']
 
 		@twilio_client = Twilio::REST::Client.new sid, token
 		@twilio_client.account.sms.messages.create(
@@ -15,6 +20,6 @@ class SendTextController < ApplicationController
 			to:   recipient,
 			body: message.body
 		)
-		redirect_to messages_path,
+		redirect_to messages_path
 	end
 end
