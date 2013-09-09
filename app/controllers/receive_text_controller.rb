@@ -15,7 +15,7 @@ class ReceiveTextController < ApplicationController
 			@twilio_client.account.sms.messages.create(
 			from: twilio_number,
 			to:   recipient,
-			body: message.body
+			body: @message.body
 		)
 		else
 			@twilio_client.account.sms.messages.create(
