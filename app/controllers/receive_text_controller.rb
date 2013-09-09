@@ -3,6 +3,26 @@ class ReceiveTextController < ApplicationController
 
 	def receive_sms
 		@message = Message.find_by_keyword(params['Body'])
-		SMSLogger.log_text_message @message.body
+
+		sid               = ENV['SID']
+		token             = ENV['TOKEN']
+		recipient         = ENV['TARGET_NUMBER']
+		twilio_number     = ENV['FROM']
+
+		@twilio_client = Twilio::REST::Client.new sid, token
+
+		if @message
+			@twilio_client.account.sms.messages.create(
+			from: twilio_number,
+			to:   recipient,
+			body: message.body
+		)
+		else
+			@twilio_client.account.sms.messages.create(
+			from: twilio_number,
+			to:   recipient,
+			body: "We couldn't find anything matching that keyword. Sorry."
+		)
+		end
 	end
 end
