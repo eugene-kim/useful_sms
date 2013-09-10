@@ -2,10 +2,13 @@ class ReceiveTextController < ApplicationController
 	skip_before_filter :verify_authenticity_token
 
 	def receive_sms
-		@message = Message.find_by_keyword(params['Body'.downcase])
+		@message = Message.find_by_keyword(params['Body'].downcase)
 
 		puts '------------------------------------quick test------------------------------------'
-		puts @message.keyword
+		puts 'params body'
+		puts params['Body']
+
+		puts 'selected message body'
 		puts @message.body
 		puts '------------------------------------end test------------------------------------'
 
