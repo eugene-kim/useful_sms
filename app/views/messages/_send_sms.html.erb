@@ -1,7 +1,7 @@
 <form action="<%= send_sms_path %>" method='post' data-remote='true'>
   <%= token_tag(nil) %>
   <input type="hidden" name="keyword" value="<%= message.keyword %>">
-  <button class="btn btn-default" type="submit">
+  <button class="btn btn-primary" type="submit">
     Send <span class="glyphicon glyphicon-send"></span>
   </button>
 </form>
