@@ -6,6 +6,8 @@ gem 'twilio-ruby'
 
 gem 'figaro'
 
+gem 'nokogiri'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

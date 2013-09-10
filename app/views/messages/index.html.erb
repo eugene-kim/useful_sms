@@ -16,7 +16,7 @@
     <td><%= message.body %></td>
     <td><%= message.description %></td>
     <td><%= link_to 'Edit', edit_message_path(message) %></td>
-    <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= button_to 'Destroy', message, method: 'delete', confirm: 'Are you sure?' %></td>
     <td>
       <%= render "send_sms", message: message%>
     </td>
