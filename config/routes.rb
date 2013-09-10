@@ -1,5 +1,8 @@
 UsefulSms::Application.routes.draw do
 
+  get "about", to: "info#about"
+  get "setup", to: "info#setup"
+
   resources :messages
 
   root to: 'messages#index'

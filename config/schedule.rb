@@ -20,5 +20,5 @@
 # Learn more: http://github.com/javan/whenever
 
 every 1.day, :at => '2:00 am' do
-	rake ":fetch_lib_hours"
+	rake "scrape:lib_hours"
 end
