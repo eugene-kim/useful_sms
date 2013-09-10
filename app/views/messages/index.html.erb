@@ -1,4 +1,4 @@
-<h1>Listing messages</h1>
+<h1>Your Messages</h1>
 
 <table class='table table-striped table-hover table-responsive'>
   <tr>
@@ -12,7 +12,6 @@
 
 <% @messages.each do |message| %>
   <tr>
-
     <td class="<%= 'danger' if message.keyword.blank? %>"><%= message.keyword %></td>
     <td><%= message.body %></td>
     <td><%= message.description %></td>
