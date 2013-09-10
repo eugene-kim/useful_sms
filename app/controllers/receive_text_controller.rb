@@ -13,16 +13,18 @@ class ReceiveTextController < ApplicationController
 
 		if @message
 			@twilio_client.account.sms.messages.create(
-			from: twilio_number,
-			to:   recipient,
-			body: @message.body
-		)
+				from: twilio_number,
+				to:   recipient,
+				body: @message.body
+			)
+			redirect_to root_path
 		else
 			@twilio_client.account.sms.messages.create(
-			from: twilio_number,
-			to:   recipient,
-			body: "We couldn't find anything matching that keyword. Sorry."
-		)
+				from: twilio_number,
+				to:   recipient,
+				body: "We couldn't find anything matching that keyword. Sorry."
+			)
+			redirect_to root_path
 		end
 	end
 end
