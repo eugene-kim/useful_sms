@@ -3,6 +3,8 @@ class ReceiveTextController < ApplicationController
 
 	def receive_sms
 		@message = Message.find_by_keyword(params['Body'])
+		puts params['Body']
+		puts params['------------------------------------------------------------------']
 
 		sid               = ENV['SID']
 		token             = ENV['TOKEN']
