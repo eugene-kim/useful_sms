@@ -12,7 +12,8 @@
 
 <% @messages.each do |message| %>
   <tr>
-    <td><%= message.keyword %></td>
+
+    <td class="<%= 'danger' if message.keyword.blank? %>"><%= message.keyword %></td>
     <td><%= message.body %></td>
     <td><%= message.description %></td>
     <td><%= link_to 'Edit', edit_message_path(message) %></td>
