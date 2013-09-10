@@ -13,10 +13,20 @@
 <% @messages.each do |message| %>
   <tr>
     <td class="<%= 'danger' if message.keyword.blank? %>"><%= message.keyword %></td>
-    <td><%= message.body %></td>
-    <td><%= message.description %></td>
-    <td><%= link_to 'Edit', edit_message_path(message) %></td>
-    <td><%= button_to 'Destroy', message, method: 'delete', confirm: 'Are you sure?' %></td>
+    <td>
+      <%= message.body %>
+    </td>
+    <td>
+      <%= message.description %>
+    </td>
+    <td>
+      <a href="<%= edit_message_path(message) %>" data-toggle="tooltip" title="Edit Message" class="btn btn-default border-blue">
+    <span class="glyphicon glyphicon-pencil"></span>
+  </a>
+    </td>
+    <td>
+      <%= button_to 'Destroy', message, method: 'delete', confirm: 'Are you sure?', class: "btn btn-danger" %>
+    </td>
     <td>
       <%= render "send_sms", message: message%>
     </td>
