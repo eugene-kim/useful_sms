@@ -4,6 +4,11 @@ class ReceiveTextController < ApplicationController
 	def receive_sms
 		@message = Message.find_by_keyword(params['Body'.downcase])
 
+		puts '------------------------------------quick test------------------------------------'
+		puts @message.keyword
+		puts @message.body
+		puts '------------------------------------end test------------------------------------'
+
 		sid               = ENV['SID']
 		token             = ENV['TOKEN']
 		recipient         = ENV['TARGET_NUMBER']
